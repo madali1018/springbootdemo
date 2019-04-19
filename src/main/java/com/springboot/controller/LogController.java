@@ -16,7 +16,9 @@ public class LogController {
 
     @RequestMapping(value = "/log")
     String printLog() {
-        LOGGER.info("Log......................");
+        for (int i = 0; i < i; i++) {
+            LOGGER.info("Log...{}", i);
+        }
         return "Hello Spring Boot!";
     }
 

@@ -20,21 +20,21 @@ public class PersonController {
 
     @RequestMapping(value = "/p2", method = RequestMethod.GET)
     String p2(@RequestParam(value = "username") String username) {
-        System.out.println("p2...");
+        System.out.println("p2...username:" + username);
         return "Hello person:" + username;
     }
 
     //普通的post请求，不支持json
     @RequestMapping(value = "/p3", method = RequestMethod.POST)
     String p3(@RequestParam(value = "username") String username) {
-        System.out.println("p3...");
+        System.out.println("p3...username:" + username);
         return "Hello person:" + username;
     }
 
     //在入参设置@RequestBody注解表示接收整个报文体，这里主要用在接收整个POST请求中的json报文体。
-    @RequestMapping(value = "/p4",method = RequestMethod.POST)
-    String p4(@RequestBody String data){
-        System.out.println("p4...");
+    @RequestMapping(value = "/p4", method = RequestMethod.POST)
+    String p4(@RequestBody String data) {
+        System.out.println("p4...data:" + data);
         return "Json is " + data;
     }
 
