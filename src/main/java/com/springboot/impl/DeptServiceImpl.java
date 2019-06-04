@@ -1,6 +1,7 @@
-package com.springboot.service;
+package com.springboot.impl;
 
 import com.springboot.bean.Dept;
+import com.springboot.contract.IDeptService;
 import com.springboot.repository.DeptRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

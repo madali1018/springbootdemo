@@ -1,4 +1,4 @@
-package com.springboot.service;
+package com.springboot.contract;
 
 import com.springboot.bean.Dept;
 

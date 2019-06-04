@@ -1,7 +1,7 @@
 package com.springboot.controller;
 
 import com.springboot.bean.Dept;
-import com.springboot.service.IDeptService;
+import com.springboot.contract.IDeptService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
