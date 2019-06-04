@@ -1,5 +1,9 @@
 package com.springboot.bean;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
@@ -11,43 +15,16 @@ import org.springframework.stereotype.Component;
 @PropertySource(value = {"classpath:person.properties"}, ignoreResourceNotFound = true, encoding = "UTF-8", name = "person.properties")
 @ConfigurationProperties(prefix = "person")
 @Component
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@ToString
 public class Person {
 
     private String name;
+
     private String pwd;
+
     private int age;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPwd() {
-        return pwd;
-    }
-
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("Person{");
-        sb.append("name='").append(name).append('\'');
-        sb.append(", pwd='").append(pwd).append('\'');
-        sb.append(", age=").append(age);
-        sb.append('}');
-        return sb.toString().replace("'null'", "null");
-    }
 }

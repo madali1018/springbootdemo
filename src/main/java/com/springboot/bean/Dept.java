@@ -1,6 +1,10 @@
 package com.springboot.bean;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -11,7 +15,11 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "dept")
-@JsonIgnoreProperties({"handler","hibernateLazyInitializer"})
+@JsonIgnoreProperties({"handler", "hibernateLazyInitializer"})
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@ToString
 public class Dept implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -27,45 +35,4 @@ public class Dept implements Serializable {
     @Column(name = "description")
     private String description;
 
-    public Dept() {
-    }
-
-    public Dept(String name, String description) {
-        this.name = name;
-        this.description = description;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("Dept{");
-        sb.append("id=").append(id);
-        sb.append(", name='").append(name).append('\'');
-        sb.append(", description='").append(description).append('\'');
-        sb.append('}');
-        return sb.toString().replace("'null'", "null");
-    }
 }

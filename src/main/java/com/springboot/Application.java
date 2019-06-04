@@ -1,9 +1,8 @@
 package com.springboot;
 
-import com.springboot.bean.Person;
-import com.springboot.bean.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.springboot.bean.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,9 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class Application {
 
     @Autowired
-    private User user;
-
-    @Autowired
     private Person person;
 
     //解决JPA因为懒加载导致JSON转换错误的问题
@@ -32,14 +28,13 @@ public class Application {
         return new ObjectMapper().disable(SerializationFeature.FAIL_ON_EMPTY_BEANS);
     }
 
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
-
     @RequestMapping(value = "/", produces = "text/plain;charset=UTF-8")
     String index() {
-        // user.name为madali，猜测是从idea中获取到的user的name，而非properties中的name。person中的name是从properties中获取到的。
-        return "Hello Spring Boot! The person is:" + person + ", the user is:" + user;
+        return "Hello Spring Boot! The person is:" + person;
+    }
+
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
     }
 
 }

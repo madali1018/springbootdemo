@@ -25,6 +25,13 @@
     </properties>
 
     <dependencies>
+        <!-- lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.4</version>
+            <scope>provided</scope>
+        </dependency>
 
         <!-- 核心模块，包括自动配置支持、日志和YAML。SpringBoot会自动加入Tomcat和Spring MVC的依赖 -->
         <dependency>

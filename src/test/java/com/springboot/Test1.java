@@ -1,4 +1,4 @@
-package com.springboot.springboot1;
+package com.springboot;
 
 import com.springboot.bean.Dept;
 import org.junit.Test;
@@ -17,7 +17,7 @@ public class Test1 {
         String url = "http://localhost:8080/index/dept/save";
 
         Map<String, Object> paramMap = new HashMap<>();
-        Dept dept = new Dept("行政部", "行政部...");
+        Dept dept = new Dept(null, "行政部", "行政部...");
         paramMap.put("dept", dept);
 
     }
