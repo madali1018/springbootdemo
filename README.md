@@ -1,4 +1,4 @@
-## Spring BootDemo示例  ## 
+## Spring Boot demo工程  ## 
 
 1.Spring Boot可以以jar的形式独立运行，运行一个Spring Boot项目只需要通过 java -jar xxx.jar命令来运行。
 2.Spring Boot可以选择内嵌Tomcat，Jetty或者Udertow，这样我们不需要以war的形式部署项目。  
